@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getToken} from './tokenService';
 
-const API_BASE_URL = process.env.API_BASE_URL;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const instance = axios.create({baseURL: API_BASE_URL});
 

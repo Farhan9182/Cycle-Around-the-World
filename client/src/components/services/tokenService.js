@@ -1,3 +1,5 @@
+import { jwtDecode } from "jwt-decode";
+
 export const setToken = (token) => localStorage.setItem('token', token);
 
 export const getToken = () => localStorage.getItem('token');
@@ -9,6 +11,6 @@ export const isTokenExpired = () => {
     if (! token) 
         return true;
      // No token found
-    const decodedToken = decode(token); // You'll need a library to decode JWT, like 'jwt-decode'
+    const decodedToken = jwtDecode(token);
     return Date.now() >= decodedToken.exp * 1000;
 };
