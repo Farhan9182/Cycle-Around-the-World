@@ -7,8 +7,8 @@ const calculateTime = async (req, res) => {
             longitude,
             latitude,
             spotName,
-            dailyCyclingHours,
-            cyclingSpeed
+            dailyCyclingHours, // in hours
+            cyclingSpeed // in km/h
         } = req.body;
 
         const spot = await TouristSpots.findOne({
@@ -33,9 +33,9 @@ const calculateTime = async (req, res) => {
             longitude: spot.longitude
         });
 
-        const estimatedTime = distance / (cyclingSpeed * dailyCyclingHours);
-
-        res.json({estimatedTime});
+        const estimatedTime = Math.floor(distance) / Math.floor(cyclingSpeed * dailyCyclingHours);
+        console.log(estimatedTime);
+        res.status(200).json({estimatedTime}); // number of days required
     } catch (error) {
         console.error('Error calculating cycling time:', error);
         res.status(500).json({message: 'Internal server error'});

@@ -5,7 +5,7 @@ const getTouristSpots = async (req, res) => {
         const touristSpots = await TouristSpots.findAll({
             attributes: ['name', 'accessible_by_cycling']
         });
-        res.json(touristSpots);
+        res.status(200).json(touristSpots);
     } catch (error) {
         console.error('Error fetching tourist spots:', error);
         res.status(500).json({message: 'Internal server error'});
@@ -25,7 +25,7 @@ const getSpotDetails = async (req, res) => {
             return res.status(404).json({message: 'Tourist spot not found'});
         }
 
-        res.json(spot);
+        res.status(200).json(spot);
     } catch (error) {
         console.error('Error fetching tourist spot details:', error);
         res.status(500).json({message: 'Internal server error'});
