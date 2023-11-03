@@ -1,3 +1,4 @@
+const TouristSpots = require("../models/tourist_spots");
 const calculateTime = async (req, res) => {
     try {
         // to be implemented
