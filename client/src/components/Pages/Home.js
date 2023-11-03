@@ -10,6 +10,10 @@ function Home() {
     const fetchSpots = async () => {
       try {
         const response = await fetchTouristSpots();
+        if (response.status === 403) {
+            alert("Token expired, Please Login again...")
+            navigate("/login");
+        }
         setSpots(response.data);
       } catch (error) {
         console.error('Error fetching spots:', error);

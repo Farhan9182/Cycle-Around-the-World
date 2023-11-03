@@ -11,6 +11,10 @@ function Login() {
   const handleLogin = async () => {
     try {
       const response = await loginApi(username, password);
+      if (response.status === 403) {
+        alert("Token expired, Please Login again...")
+        navigate("/login");
+    }
       if (response.status === 200) {
         // Login successful
         setError("");
