@@ -50,7 +50,7 @@ export const fetchSpotDetails = async (spotName) => {
     }
 };
 
-export const calculateCyclingTimeApi = async (longitude, latitude, spotName, dailyCyclingHours, cyclingSpeed) => {
+export const calculateCyclingTime = async (longitude, latitude, spotName, dailyCyclingHours, cyclingSpeed) => {
     try {
         const response = await instance.post('/calculate/cyclingTime', {
             longitude,
