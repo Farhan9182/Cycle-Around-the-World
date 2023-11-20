@@ -2,10 +2,10 @@ require('dotenv').config();
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const sequelize = require('./config/sequelize');
-const authRoutes = require('./routes/authRoutes');
-const spotsRoutes = require('./routes/spotsRoutes');
-const calculateRoutes = require('./routes/calculateRoutes');
+const sequelize = require('./src/config/sequelize');
+const authRoutes = require('./src/routes/authRoutes');
+const spotsRoutes = require('./src/routes/spotsRoutes');
+const calculateRoutes = require('./src/routes/calculateRoutes');
 
 const app = express();
 const port = process.env.PORT || 3000;
