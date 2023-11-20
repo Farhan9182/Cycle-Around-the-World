@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "The objective is to create an application that estimates cycling times to various tourist destinations around the world, while also considering their accessibility for cycling.",
   "main": "index.js",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd src && npm start"
